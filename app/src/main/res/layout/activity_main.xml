@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textGenerado"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginBottom="252dp"
+        android:text="vacio"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/Nombre"
+        android:layout_width="122dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:hint="@string/Nombre"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName|textCapSentences"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Apellidos"
+        android:layout_width="185dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="112dp"
+        android:ems="10"
+        android:hint="@string/Apellidos"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName|textCapSentences"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Edad"
+        android:layout_width="49dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="192dp"
+        android:ems="10"
+        android:hint="@string/Edad"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/SpinerEstado_civil"
+        android:layout_width="150dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/estado_civil"
+        android:persistentDrawingCache="none"
+        android:prompt="@string/estado_civil"
+        android:saveEnabled="false"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/Genero"
+        android:layout_width="141dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="244dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/Hombre"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Hombre" />
+
+        <RadioButton
+            android:id="@+id/Mujer"
+            android:layout_width="78dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Mujer" />
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/Generar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="176dp"
+        android:text="@string/Generar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Limpiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="76dp"
+        android:layout_marginBottom="176dp"
+        android:text="@string/Limpiar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Switch
+        android:id="@+id/T_hijos"
+        android:layout_width="149dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="12dp"
+        android:checked="false"
+        android:showText="true"
+        android:text="@string/Hijos"
+        android:textOff="@string/NO"
+        android:textOn="@string/SI"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

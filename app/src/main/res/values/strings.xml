@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Datos Personales</string>
+    <string name="Nombre">Nombre</string>
+    <string name="Apellidos">Apellidos</string>
+    <string name="Edad">Edad</string>
+    <string name="Hombre">Hombre</string>
+    <string name="Mujer">Mujer</string>
+    <string name="Casado">Casado</string>
+    <string name="Separado">"Separado"</string>
+    <string name="Viudo">"Viudo"</string>
+    <string name="Otros">"Otros"</string>
+    <string name="NO">"NO"</string>
+    <string name="SI">"SI"</string>
+    <string name="Hijos">¿Tienes Hijos?</string>
+    <string name="Generar">"Generar"</string>
+    <string name="Limpiar">"Limpiar"</string>
+    <string name="estado_civil">"Estado Civil"</string>
+
+</resources>

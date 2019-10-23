@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Datos Personales</string>
+    <string name="Nombre">Name</string>
+    <string name="Apellidos">Surnames</string>
+    <string name="Otros">Others</string>
+    <string name="NO">No</string>
+    <string name="Mujer">Women</string>
+    <string name="Hombre">Men</string>
+    <string name="Limpiar">Reset</string>
+    <string name="Hijos">"Have children? "</string>
+    <string name="Generar">Generate</string>
+    <string name="Casado">Married</string>
+    <string name="Edad">Age</string>
+    <string name="SI">Yes</string>
+    <string name="Separado">Separated</string>
+    <string name="Viudo">Separated</string>
+    <string name="estado_civil">Civil Status</string>
+</resources>
