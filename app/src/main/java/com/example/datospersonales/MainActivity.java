@@ -2,10 +2,13 @@ package com.example.datospersonales;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Switch;
@@ -21,28 +24,92 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        final TextView nombre = (TextView) findViewById(R.id.Nombre);
-        final TextView apellidos = (TextView) findViewById(R.id.Apellidos);
-        final TextView edad = (TextView) findViewById(R.id.Edad);
+        final EditText nombre = (EditText) findViewById(R.id.Nombre);
+        final EditText apellidos = (EditText) findViewById(R.id.Apellidos);
+        final EditText edad = (EditText) findViewById(R.id.Edad);
+        final TextView textgenerado = (TextView) findViewById(R.id.textGenerado);
 
-        final RadioGroup rq = (RadioGroup) findViewById(R.id.Genero);
+        final RadioGroup rq_genero = (RadioGroup) findViewById(R.id.Genero);
 
         final Spinner estado_civil = (Spinner) findViewById(R.id.SpinerEstado_civil);
         final Switch hijos = (Switch) findViewById(R.id.T_hijos);
 
-        final Button bt = (Button) findViewById(R.id.Limpiar);
+        final Button bt_limpiar = (Button) findViewById(R.id.Limpiar);
+        final Button bt_Generar = (Button) findViewById(R.id.Generar);
 
-        bt.setOnClickListener(new Button.OnClickListener() {
+        bt_limpiar.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                rq.clearCheck();
-                nombre.setText("");
+                rq_genero.clearCheck();
                 apellidos.setText("");
+                nombre.setText("");
                 edad.setText("");
                 hijos.setChecked(false);
-                estado_civil.dispatchSetSelected(false);
+                estado_civil.setSelection(0);
+                textgenerado.setText("");
+
+            }
+        });
+        bt_Generar.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (nombre.getText().toString().isEmpty()==true){
+                    textgenerado.setText("Rellena el campo Nombre");
+                }else{
+                    if (apellidos.getText().toString().isEmpty()==true){
+                        textgenerado.setText("Rellena el campo Apellidos");
+                    }else{
+                        if (edad.getText().toString().isEmpty()==true){
+                            textgenerado.setText("Rellena el campo edad");
+                        }else{
+                            if (rq_genero.getCheckedRadioButtonId()== -1){
+                                textgenerado.setText("Di tu genero");
+
+                            }else{
+                                if (estado_civil.getSelectedItemPosition()==0){
+                                    textgenerado.setText("Rellena estado civil");
+
+                                }else {
+
+                                    textgenerado.setTextColor(Color.BLACK);
+                                    textgenerado.setText(apellidos.getText().toString()+ " "+ nombre.getText().toString());
+                                    String string_edad= edad.getText().toString();
+
+                                    // menor o no
+                                    int entero_edad = Integer.parseInt(string_edad);
+
+                                    if (entero_edad>18){
+                                        textgenerado.append(","+ " mayor de edad ");
+
+                                    }else {
+                                        textgenerado.append(","+ " menor de edad ");
+                                    }
+                                    //genero
+                                    int Generoid = rq_genero.getCheckedRadioButtonId();
+                                    View GeneroButtom = rq_genero.findViewById(Generoid);
+                                    int indice =  rq_genero.indexOfChild(GeneroButtom);
+                                    RadioButton btn = (RadioButton) rq_genero.getChildAt(indice);
+                                    String selection = btn.getText().toString().toLowerCase();
+                                    textgenerado.append(selection + " ");
+                                    //estado_civil
+                                    String texto_estado_civil = estado_civil.getSelectedItem().toString().toLowerCase();
+                                    textgenerado.append(texto_estado_civil+ " y ");
+
+                                    //comprueba hijos
+                                    if (hijos.isChecked()){
+                                        textgenerado.append("con hijos");
+                                    }else{
+                                        textgenerado.append("sin hijos");
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         });
 

@@ -12,7 +12,6 @@
         android:layout_height="100dp"
         android:layout_marginStart="92dp"
         android:layout_marginBottom="252dp"
-        android:text="vacio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
