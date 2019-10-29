@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 hijos.setChecked(false);
                 estado_civil.setSelection(0);
                 textgenerado.setText("");
+                nombre.requestFocus();
 
             }
         });
@@ -57,13 +58,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (nombre.getText().toString().isEmpty()==true){
+                    textgenerado.setTextColor(Color.RED);
                     textgenerado.setText("Rellena el campo Nombre");
+                    nombre.requestFocus();
                 }else{
                     if (apellidos.getText().toString().isEmpty()==true){
                         textgenerado.setText("Rellena el campo Apellidos");
+                        apellidos.requestFocus();
                     }else{
                         if (edad.getText().toString().isEmpty()==true){
                             textgenerado.setText("Rellena el campo edad");
+                            edad.requestFocus();
+
                         }else{
                             if (rq_genero.getCheckedRadioButtonId()== -1){
                                 textgenerado.setText("Di tu genero");
@@ -81,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                                     // menor o no
                                     int entero_edad = Integer.parseInt(string_edad);
 
-                                    if (entero_edad>18){
+                                    if (entero_edad>=18){
                                         textgenerado.append(","+ " mayor de edad ");
 
                                     }else {
@@ -114,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        final String[] datos = new String[]{getString(R.string.Otros),getString(R.string.Casado),getString(R.string.Separado),getString(R.string.Viudo)};
+        final String[] datos = new String[]{getString(R.string.estado_civil),getString(R.string.Otros),getString(R.string.Casado),getString(R.string.Separado),getString(R.string.Viudo)};
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, datos);
         final Spinner cmbOpciones = (Spinner)findViewById(R.id.SpinerEstado_civil);
