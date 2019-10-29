@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        //boton generar texto
+        //boton generar texto 2
         bt_Generar.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
