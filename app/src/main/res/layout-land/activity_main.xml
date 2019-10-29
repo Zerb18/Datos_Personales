@@ -54,7 +54,7 @@
         android:contentDescription="@string/estado_civil"
         android:persistentDrawingCache="none"
         android:prompt="@string/estado_civil"
-        android:saveEnabled="false"
+        android:saveEnabled="true"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -123,6 +123,7 @@
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
+        android:freezesText="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Limpiar"
         app:layout_constraintHorizontal_bias="0.554"
