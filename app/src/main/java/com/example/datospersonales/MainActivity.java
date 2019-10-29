@@ -64,19 +64,23 @@ public class MainActivity extends AppCompatActivity {
                     nombre.requestFocus();
                 }else{
                     if (apellidos.getText().toString().isEmpty()==true){
+                        textgenerado.setTextColor(Color.RED);
                         textgenerado.setText("Rellena el campo Apellidos");
                         apellidos.requestFocus();
                     }else{
                         if (edad.getText().toString().isEmpty()==true){
+                            textgenerado.setTextColor(Color.RED);
                             textgenerado.setText("Rellena el campo edad");
                             edad.requestFocus();
 
                         }else{
                             if (rq_genero.getCheckedRadioButtonId()== -1){
+                                textgenerado.setTextColor(Color.RED);
                                 textgenerado.setText("Di tu genero");
 
                             }else{
                                 if (estado_civil.getSelectedItemPosition()==0){
+                                    textgenerado.setTextColor(Color.RED);
                                     textgenerado.setText("Rellena estado civil");
 
                                 }else {
