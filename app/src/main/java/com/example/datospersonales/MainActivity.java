@@ -3,6 +3,7 @@ package com.example.datospersonales;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -16,13 +17,17 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+   // private Typeface believer;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //declaro fuentes
+        //String fuente1 = "font/believer.otf";
+        //this.believer = Typeface.createFromAsset(getAssets(),fuente1);
 
         final EditText nombre = (EditText) findViewById(R.id.Nombre);
         final EditText apellidos = (EditText) findViewById(R.id.Apellidos);
@@ -57,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         bt_Generar.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+              //  textgenerado.setTypeface(believer);
                 if (nombre.getText().toString().isEmpty()==true){
                     textgenerado.setTextColor(Color.RED);
                     textgenerado.setText("Rellena el campo Nombre");

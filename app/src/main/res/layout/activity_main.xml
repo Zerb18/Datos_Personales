@@ -87,7 +87,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="76dp"
-        android:layout_marginBottom="176dp"
+        android:layout_marginBottom="76dp"
         android:text="@string/Generar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -97,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="76dp"
-        android:layout_marginBottom="176dp"
+        android:layout_marginBottom="76dp"
         android:text="@string/Limpiar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -117,13 +117,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        style="@style/MiEstilo.MiEstilo1"
         android:id="@+id/textGenerado"
-        android:layout_width="200dp"
-        android:layout_height="100dp"
+        android:layout_width="202dp"
+        android:layout_height="153dp"
         android:layout_marginStart="92dp"
         android:layout_marginBottom="252dp"
         android:freezesText="true"
+        android:padding="@dimen/my_value"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

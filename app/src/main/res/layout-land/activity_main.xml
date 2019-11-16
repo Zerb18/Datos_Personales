@@ -120,6 +120,8 @@
         android:id="@+id/textGenerado"
         android:layout_width="200dp"
         android:layout_height="100dp"
+        android:fontFamily="@font/photo"
+        android:textColor="@color/colorPrimary"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="16dp"
